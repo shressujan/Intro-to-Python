@@ -1,4 +1,7 @@
 class Solution:
+    """You are given a list of numbers, and a target number k.
+     Return whether or not there are two numbers in the list that add up to k.
+     Try to do it in a single pass of the list."""
     @staticmethod
     def two_sum(num_list, target):
         for x in num_list:

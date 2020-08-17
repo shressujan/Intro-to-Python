@@ -3,6 +3,7 @@ class ListNode:
     Given a singly-linked list, reverse the list. This can be done iteratively or recursively.
     Input: 4 -> 3 -> 2 -> 1 -> 0 -> NULL
     Output: 0 -> 1 -> 2 -> 3 -> 4 -> NULL"""
+
     def __init__(self, x):
         self.val = x
         self.next = None
@@ -17,21 +18,15 @@ class ListNode:
         print(output)
 
     def reverseIteratively(self, head):
-        current_node = head
-        next_node = head.next
-        while next_node is not None:
-            # new_next_node = next_node
-            # new_next_node.next = current_node
-            # new_node = new_next_node
-            # next_node = next_node.next
-            self.val = next_node
-            self.next = current_node
-            next_node = next_node.next
-
-
+        current_node = ListNode(None)
+        while current_node:
+            current_node = current_node.next
 
     def reverseRecursively(self, head):
-        pass
+        current_node = head
+        current_node.
+        self.next = ListNode().reverseRecursively(current_node.next)
+
 
 
 if __name__ == '__main__':

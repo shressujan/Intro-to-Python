@@ -1,4 +1,6 @@
 class Solution:
+    """Given a string, find the length of the longest substring without repeating characters.
+       Find a solution in linear time O(n)"""
     @staticmethod
     def lengthOfLongestSubstring(s):
         substring_link = {}
