@@ -16,7 +16,8 @@ class ListNode:
 
 
 class Solution:
-    def addTwoNumbers(self, l1, l2, c=0):
+    @staticmethod
+    def addTwoNumbers(l1, l2, c=0):
         # First List Node
         step_up = 1
         first_num = 0
