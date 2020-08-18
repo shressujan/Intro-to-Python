@@ -8,6 +8,14 @@ class ListNode:
         self.val = x
         self.next = None
 
+    def add_item(self, x):
+        if self.val is None:
+            self.val = x
+            return
+        while self.next:
+            self = self.next
+        self.next = ListNode(x)
+
     def printList(self):
         node = self
         output = ''
@@ -17,16 +25,34 @@ class ListNode:
             node = node.next
         print(output)
 
-    def reverseIteratively(self, head):
-        current_node = ListNode(None)
+    @staticmethod
+    def reverseIteratively(head):
+        current_node = head
+        num = 0
+        step = 10
         while current_node:
+            num = num * step + current_node.val
             current_node = current_node.next
 
-    def reverseRecursively(self, head):
-        current_node = head
-        current_node.
-        self.next = ListNode().reverseRecursively(current_node.next)
+        # Create list
+        lst = ListNode(None)
+        while num != 0:
+            rem = num % step
+            lst.add_item(rem)
+            num //= step
 
+        return lst
+
+    # def reverseRecursively(self, head, num):
+    #     current_node = head
+    #     if current_node.next:
+    #         num = num * 10 + current_node.val
+    #         ListNode.reverseRecursively(self, current_node.next, num)
+    #
+    #         if self is None:
+    #             self.val = current_node.val
+    #         else:
+    #             self.next = current_node
 
 
 if __name__ == '__main__':
@@ -45,6 +71,11 @@ if __name__ == '__main__':
     print('Initial list: ')
     testHead.printList()
 
-    testHead.reverseIteratively(testHead)
+    lst = testHead.reverseIteratively(testHead)
     print('List after reversal: ')
-    testTail.printList()
+    lst.printList()
+
+    # lst = ListNode(None)
+    # lst.reverseRecursively(testHead, 0)
+    # print('List after reversal: ')
+    # lst.printList()
